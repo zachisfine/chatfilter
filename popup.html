@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Extension Options</title>
+    <style>
+        body {
+            width: 400px; /* Adjust width as needed */
+            padding: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px; /* Adjust height as needed */
+	    resize: vertical;
+	    min-height: 60px;
+        }
+        #status {
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <h2>Chat Filter Settings</h2>
+    
+    <div class="setting">
+        <label for="minCharRepeats">Minimum Character Repeats:</label>
+        <input type="number" id="minCharRepeats" min="2" value="5" title="The minimum number of times a character must repeat to filter the message.">
+    </div>
+    
+    <div class="setting">
+        <label for="minWordRepeats">Minimum Word Repeats:</label>
+        <input type="number" id="minWordRepeats" min="2" value="3" title="The minimum number of times a word must repeat to filter the message.">
+    </div>
+    
+    <div class="setting">
+        <label for="minMultiWordRepeats">Minimum Multi-Word Repeats:</label>
+        <input type="number" id="minMultiWordRepeats" min="2" value="2" title="The minimum number of times a multi-word phrase must repeat to filter the message.">
+    </div>
+    
+    <div class="setting">
+        <label for="wordsList">Filtered Words:</label>
+        <textarea id="wordsList" title="Enter words to filter out from the chat, one per line."></textarea>
+    </div>
+    
+    <button id="save">Save</button>
+    <div id="status"></div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
